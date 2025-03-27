@@ -17,4 +17,4 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
 # Aliases
-alias ls="ls -G"
+alias ls="ls --color=auto"
