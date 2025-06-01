@@ -1,55 +1,59 @@
 return {
-   {
-        "hrsh7th/nvim-cmp",
-        dependencies = {
-            "hrsh7th/cmp-nvim-lsp",
-            "hrsh7th/cmp-path",
-            "hrsh7th/cmp-nvim-lua",
-            "hrsh7th/cmp-calc",
-            "onsails/lspkind.nvim",
-        },
-        event = { "InsertEnter" },
-        config = function()            
-            local cmp = require("cmp")
-            cmp.setup({
-                snippet = {
-                    expand = function(args)
-                        vim.snippet.expand(args.body)
-                    end,
-                },
-                window = {
-                    completion = cmp.config.window.bordered(),
-                    documentation = cmp.config.window.bordered(),
-                },
-                formatting = {
-                    fields = { "kind", "abbr", "menu" },
-                    format = require("lspkind").cmp_format({})
-                },
-                sources = {
-                    { name = "nvim_lsp" },
-                    { name = "luasnip" },
-                    { name = "path" },
-                    { name = "nvim_lua" },
-                    { name = "calc" },
-                },
-                mapping = {
-                    ["<tab>"] = cmp.mapping.select_next_item(),
-                    ["<s-tab>"] = cmp.mapping.select_prev_item(),
-                    ["<c-space>"] = cmp.mapping.complete(),
-                    ["<escape>"] = cmp.mapping.abort(),
-                    ["<cr>"] = cmp.mapping.confirm({
-                        behavior = cmp.ConfirmBehavior.Insert,
-                        select = true,
-                    }),
-                },
-            })
-        end,
+    {
+        "zbirenbaum/copilot.lua",
+        cmd = "Copilot",
+        event = "InsertEnter",
+        opts = {},
+        keys = {
+            -- Suggestions must be toggled explicitly
+            { "<leader>cp", "<cmd>Copilot suggestion toggle_auto_trigger<cr>", desc = "[C]o[p]ilot" },
+        }
     },
 
-    -- copilot integration
     {
-        "github/copilot.vim",
-        event = { "InsertEnter" },
-        cmd = { "Copilot" },
+        "saghen/blink.cmp",
+        version = "1.*",
+        opts = {
+            fuzzy = { implementation = "lua" },
+            keymap = {
+                preset = "none",
+                ["<C-Space>"] = { "hide", "fallback" },
+                ["<Escape>"] = { "hide", "fallback" },
+                ["<Up>"] = { "select_prev", "fallback" },
+                ["<Down>"] = { "select_next", "fallback" },
+                ["<Enter>"] = { "accept", "fallback" },
+                ["<Tab>"] = {
+                    function(cmp)
+                        if cmp.snippet_active() then
+                            return cmp.accept()
+                        else
+                            return cmp.select_and_accept()
+                        end
+                    end,
+                    "snippet_forward",
+                    "fallback"
+                },
+                ["<S-Tab>"] = { "snippet_backward", "fallback" },
+                ['<C-b>'] = { 'scroll_documentation_up', 'fallback' },
+                ['<C-f>'] = { 'scroll_documentation_down', 'fallback' },
+            },
+            completion = {
+                list = { selection = { auto_insert = false } },
+                documentation = {
+                    auto_show = true,
+                    auto_show_delay_ms = 500,
+                },
+                menu = {
+                    draw = {
+                        padding = 1,
+                        gap = 1,
+                        columns = {
+                            { "kind_icon" },
+                            { "label",    "label_description", gap = 1 },
+                        },
+                    }
+                }
+            },
+        },
     },
 }

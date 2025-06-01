@@ -1,5 +1,5 @@
 return {
-    -- git signs in editor
+    -- Git Signs
     {
         "lewis6991/gitsigns.nvim",
         opts = {
@@ -21,13 +21,12 @@ return {
         },
     },
 
-    -- git blame lines
+    -- Git Blame
     {
         "f-person/git-blame.nvim",
         event = "VeryLazy",
-        keys = {
-            { "<leader>gb", "<cmd>GitBlameToggle<cr>", desc = "Git Blame" },
-        },
+        keys = { { "<leader>gB", "<cmd>GitBlameToggle<cr>", desc = "[G]it [B]lame" } },
         opts = { enabled = false },
     },
 }
+

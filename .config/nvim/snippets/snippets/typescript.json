@@ -1,0 +1,131 @@
+{
+    "Class Definition": {
+        "description": "Class Definition",
+        "prefix": "class",
+        "body": [
+            "class ${1:name} {",
+            "\tconstructor(${2:parameters}) {",
+            "\t\t$0",
+            "\t}",
+            "}"
+        ]
+    },
+
+    "Function Definition": {
+        "description": "Function Definition",
+        "prefix": "func",
+        "body": [
+            "/**",
+            " * ${4:Description}",
+            " */",
+            "function ${1:Name}(${2:Parameters}): ${3:Return Type} {",
+            "\t$0",
+            "}"
+        ]
+    },
+
+    "For Loop": {
+        "description": "For Loop",
+        "prefix": "for",
+        "body": [
+            "for (let ${1:index} = 0; ${1:index} < ${2:limit}; ${1:index}++) {",
+            "\t$0",
+            "}"
+        ]
+    },
+
+    "For in Loop": {
+        "description": "For in Loop",
+        "prefix": "forin",
+        "body": [
+            "for (const ${1:key} in ${2:object}) {",
+            "\t$0",
+            "}"
+        ]
+    },
+
+    "For of Loop": {
+        "description": "For of Loop",
+        "prefix": "forof",
+        "body": [
+            "for (const ${1:value} of ${2:object}) {",
+            "\t$0",
+            "}"
+        ]
+    },
+
+    "While Loop": {
+        "description": "While Loop",
+        "prefix": "while",
+        "body": [
+            "while (${1:Condition}) {",
+            "\t$0",
+            "}"
+        ]
+    },
+
+    "If Statement": {
+        "description": "If Statement",
+        "prefix": "if",
+        "body": [
+            "if (${1:condition}) {",
+            "\t$0",
+            "}"
+        ]
+    },
+
+    "Switch Statement": {
+        "description": "Switch Statement",
+        "prefix": "switch",
+        "body": [
+            "switch (${1:key}) {",
+            "\tcase ${2:value}:",
+            "\t\t$0",
+            "\t\tbreak;",
+            "",
+            "\tdefault:",
+            "\t\tbreak;",
+            "}"
+        ]
+    },
+
+    "Try-Catch Statement": {
+        "description": "Try-Catch Statement",
+        "prefix": "try",
+        "body": [
+            "try {",
+            "\t$0",
+            "} catch (${1:error}) {",
+            "\t",
+            "}"
+        ]
+    },
+
+
+    "Log to console": {
+        "description": "Log to console",
+        "prefix": "log",
+        "body": [
+            "console.log($1);",
+            "$0"
+        ]
+    },
+
+    "Log warning to console": {
+        "description": "Log warning to console",
+        "prefix": "warn",
+        "body": [
+            "console.warn($1);",
+            "$0"
+        ]
+    },
+
+    "Log error to console": {
+        "description": "Log error to console",
+        "prefix": "error",
+        "body": [
+            "console.error($1);",
+            "$0"
+        ]
+    }
+}

@@ -1,0 +1,130 @@
+{
+    "Svelte Component": {
+        "description": "Svelte Component",
+        "prefix": "svelte",
+        "body": [
+            "<script lang=\"ts\">",
+            "\t${1:Script}",
+            "</script>",
+            "",
+            "${2:Template}",
+            "",
+            "<style>",
+            "\t${3:Style}",
+            "</style>"
+        ]
+    },
+    "Script Tag": {
+        "description": "Script Tag",
+        "prefix": "script",
+        "body": [
+            "<script lang=\"ts\">",
+            "\t$0",
+            "</script>"
+        ]
+    },
+    "Style Tag": {
+        "description": "Style Tag",
+        "prefix": "style",
+        "body": [
+            "<style>",
+            "\t$0",
+            "</style>"
+        ]
+    },
+    "Component Props": {
+        "description": "Component Props",
+        "prefix": "props",
+        "body": [
+            "interface Props {",
+            "\tchildren: Snippet;",
+            "\t$0",
+            "}",
+            "",
+            "let { children }: Props = \\$props();"
+        ]
+    },
+    "Svelte Action": {
+        "description": "Svelte Action",
+        "prefix": "action",
+        "body": [
+            "/**",
+            " * ${1: Description}",
+            " */",
+            "function ${2:Name}(node: HTMLElement, parameter: ${3:Parameter}) {",
+            "\t$0",
+            "\treturn {",
+            "\t\tupdate: (updated: ${3:Parameter}) => {}",
+            "\t\tdestroy: () => {},",
+            "\t};",
+            "}"
+        ]
+    },
+    "If Block": {
+        "description": "If Block",
+        "prefix": "if",
+        "body": [
+            "{#if ${1:Condition}}",
+            "\t$0",
+            "{/if}"
+        ]
+    },
+    "If-Else Block": {
+        "description": "If-Else Block",
+        "prefix": "ifelse",
+        "body": [
+            "{#if ${1:Condition}}",
+            "\t${2:<!-- Content -->}",
+            "{:else ${3:Condition}}",
+            "\t${4:<!-- Else Content -->}",
+            "{/if}"
+        ]
+    },
+    "Each Block": {
+        "description": "Each Block",
+        "prefix": "each",
+        "body": [
+            "{#each ${1:Construct} as ${2:Structure}}",
+            "\t$0",
+            "{/each}"
+        ]
+    },
+    "Key Block": {
+        "description": "Key Block",
+        "prefix": "key",
+        "body": [
+            "{#key ${1:Value}}",
+            "\t$0",
+            "{/key}"
+        ]
+    },
+    "Await Block": {
+        "description": "Await Block",
+        "prefix": "await",
+        "body": [
+            "{#await ${1:Promise}}",
+            "\t${2:<!-- Pending -->}",
+            "{:then ${3:Value}}",
+            "\t$0",
+            "{/await}"
+        ]
+    },
+    "Await-Then Block": {
+        "description": "Await-Then Block",
+        "prefix": "await-then",
+        "body": [
+            "{#await ${1:Promise} then ${2:Value}}",
+            "\t$0",
+            "{/await}"
+        ]
+    },
+    "Snippet Definition": {
+        "description": "Snippet Definition",
+        "prefix": "snippet",
+        "body": [
+            "{#snippet ${1:Name}(${2:Parameters})}",
+            "\t$0",
+            "{/snippet}"
+        ]
+    }
+}

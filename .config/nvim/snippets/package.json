@@ -1,0 +1,15 @@
+{
+    "name": "neovim-snippets",
+    "contributes": {
+        "snippets": [
+            {
+                "language": "svelte",
+                "path": "./snippets/svelte.json"
+            },
+            {
+                "language": "typescript",
+                "path": "./snippets/typescript.json"
+            }
+        ]
+    }
+}
