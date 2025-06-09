@@ -39,9 +39,9 @@
             "interface Props {",
             "\tchildren: Snippet;",
             "\t$0",
-            "}",
+            "};",
             "",
-            "let { children }: Props = \\$props();"
+            "let { children } = \\$props();"
         ]
     },
     "Svelte Action": {

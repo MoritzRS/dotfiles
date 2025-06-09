@@ -23,6 +23,7 @@ return {
             rust = { "rustfmt" },
             svelte = { "prettier" },
             typescript = { "prettier" },
+            vue = { "prettier" },
         },
     }
 }

@@ -1,14 +1,16 @@
 return {
     {
         "nvim-treesitter/nvim-treesitter",
-        version = false,
+        branch = "master",
         build = ":TSUpdate",
         lazy = false,
         main = "nvim-treesitter.configs",
         opts = {
             ensure_installed = {
                 "bash",
+                "blueprint",
                 "css",
+                "csv",
                 "dockerfile",
                 "gitignore",
                 "go",
@@ -18,6 +20,8 @@ return {
                 "lua",
                 "markdown",
                 "markdown_inline",
+                "meson",
+                "php",
                 "python",
                 "regex",
                 "rust",
@@ -26,13 +30,14 @@ return {
                 "toml",
                 "typescript",
                 "vim",
+                "vue",
                 "yaml",
             },
-            
+
             highlight = { enable = true },
             indent = { enable = true },
             auto_install = true,
-            
+
             incremental_selection = {
                 enable = true,
                 keymaps = {
