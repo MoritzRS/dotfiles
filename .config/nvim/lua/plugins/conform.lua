@@ -17,13 +17,17 @@ return {
             lsp_format = "fallback",
         },
         formatters_by_ft = {
+            css = { "prettier" },
+            html = { "prettier" },
             javascript = { "prettier" },
+            json = { "prettier" },
             lua = { "stylua" },
             markdown = { "prettier" },
             rust = { "rustfmt" },
             svelte = { "prettier" },
             typescript = { "prettier" },
             vue = { "prettier" },
+            yaml = { "prettier" },
         },
     }
 }

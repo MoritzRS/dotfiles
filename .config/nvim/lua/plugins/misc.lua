@@ -1,7 +1,10 @@
 return {
     { "nvim-tree/nvim-web-devicons" },
     { "folke/which-key.nvim" },
-    { "echasnovski/mini.icons" },
-    { "echasnovski/mini.pairs", opts = {} },
-    { "windwp/nvim-ts-autotag", opts = {} },
+    { "windwp/nvim-ts-autotag",     opts = {} },
+
+    { "echasnovski/mini.icons",     opts = {} },
+    { "echasnovski/mini.ai",        opts = {} },
+    { "echasnovski/mini.pairs",     opts = {} },
+    { "echasnovski/mini.surround",  opts = {} },
 }

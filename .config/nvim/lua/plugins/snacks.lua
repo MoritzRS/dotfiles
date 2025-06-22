@@ -73,9 +73,7 @@ return {
         { "<leader>sm",      function() Snacks.picker.marks({ layout = "select" }) end,                 desc = "[S]earch [M]ark" },
 
         -- Git
-        { "<leader>gb",      function() Snacks.picker.git_branches() end,                               desc = "[G]it [B]ranches" },
         { "<leader>gs",      function() Snacks.picker.git_status() end,                                 desc = "[G]it [S]tatus" },
-        { "<leader>gS",      function() Snacks.picker.git_stash() end,                                  desc = "[G]it [S]tash" },
         { "<leader>gd",      function() Snacks.picker.git_diff() end,                                   desc = "[G]it [D]iff" },
 
         -- LSP
