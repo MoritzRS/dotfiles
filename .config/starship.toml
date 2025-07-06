@@ -1,59 +1,53 @@
 format = """
-[](surface0)\
+[╭╴](surface2 bold)\
+[](surface1)\
 $os\
 $username\
-[](bg:peach fg:surface0)\
+[](fg:surface1 bg:orange)\
 $directory\
-[](fg:peach bg:green)\
+[](fg:orange bg:green)\
 $git_branch\
 $git_status\
 [](fg:green bg:blue)\
-$time\
-[ ](fg:blue)\
+$nodejs\
+$rust\
+$python\
+$php\
+[](fg:blue) \
+$fill \
+[](surface1)\
+$status\
+$cmd_duration\
+[](surface1)\
+$line_break\
+[╰─󰅂 ](surface2 bold)\
 """
-add_newline = true
 
-palette = "catppuccin_mocha"
+palette = "tokyonight"
 
-[palettes.catppuccin_mocha]
-rosewater = "#f5e0dc"
-flamingo = "#f2cdcd"
-pink = "#f5c2e7"
-mauve = "#cba6f7"
-red = "#f38ba8"
-maroon = "#eba0ac"
-peach = "#fab387"
-yellow = "#f9e2af"
-green = "#a6e3a1"
-teal = "#94e2d5"
-sky = "#89dceb"
-sapphire = "#74c7ec"
-blue = "#89b4fa"
-lavender = "#b4befe"
-text = "#cdd6f4"
-subtext1 = "#bac2de"
-subtext0 = "#a6adc8"
-overlay2 = "#9399b2"
-overlay1 = "#7f849c"
-overlay0 = "#6c7086"
-surface2 = "#585b70"
-surface1 = "#45475a"
-surface0 = "#313244"
-base = "#1e1e2e"
-mantle = "#181825"
-crust = "#11111b"
+[palettes.tokyonight]
+red = "#f7768e"
+orange = "#ff9e64"
+yellow = "#e0af68"
+green = "#9ece6a"
+cyan = "#7dcfff"
+blue = "#7aa2f7"
+purple = "#bb9af7"
+text = "#c0caf5"
+subtext1 = "#a9b1d6"
+subtext0 = "#9aa5ce"
+surface2 = "#565f89"
+surface1 = "#414868"
+surface0 = "#24283b"
+base = "#1a1b26"
 
-
-[username]
-show_always = true
-style_user = "bg:surface0"
-style_root = "bg:surface0"
-format = '[$user ]($style)'
-disabled = false
+[fill]
+style = "bold surface2"
+symbol = "·"
 
 [os]
-style = "bg:surface0 fg:text"
-format = '[$symbol ]($style)'
+style = "bg:surface1 fg:text"
+format = '[ $symbol ]($style)'
 disabled = false
 
 [os.symbols]
@@ -77,11 +71,18 @@ Debian = "󰣚"
 Redhat = "󱄛"
 RedHatEnterprise = "󱄛"
 
+[username]
+disabled = false
+show_always = true
+style_user = "bg:surface1 fg:text"
+style_root = "red"
+format = '[ $user ]($style)'
+
 [directory]
-style = "bg:peach fg:mantle"
+style = "bg:orange fg:base"
 format = "[ $path ]($style)"
 truncation_length = 3
-truncation_symbol = "/"
+truncation_symbol = "󰉖 "
 
 [directory.substitutions]
 "Documents" = "󰈙 "
@@ -98,8 +99,35 @@ format = '[ $symbol $branch ]($style)'
 style = "bg:green fg:base"
 format = '[$all_status$ahead_behind ]($style)'
 
-[time]
+[nodejs]
+style = "bg:blue fg:base"
+symbol = "󰎙 "
+format = "[ $symbol$version ]($style)"
+
+[rust]
+style = "bg:blue fg:base"
+symbol = "󱘗 "
+format = "[ $symbol$version ]($style)"
+
+[python]
+style = "bg:blue fg:base"
+symbol = "󰌠 "
+format = "[ $symbol$version ]($style)"
+
+[php]
+style = "bg:blue fg:base"
+symbol = "󰌟 "
+format = "[ $symbol$version ]($style)"
+
+[status]
 disabled = false
-time_format = "%R"
-style = "bg:blue fg:mantle"
-format = '[ 󰅐 $time ]($style)'
+style = "bg:surface1 fg:red"
+format = "[ $status]($style)"
+
+[cmd_duration]
+disabled = false
+show_milliseconds = true
+min_time = 0
+style = "bg:surface1 fg:text"
+format = "[ 󰚭 $duration]($style)"
+

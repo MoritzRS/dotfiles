@@ -5,7 +5,6 @@ return {
             "folke/todo-comments.nvim",
             dependencies = { "nvim-lua/plenary.nvim" },
             event = { "BufEnter" },
-            cmd = { "TodoTelescope" },
             opts = {},
         }
     },
@@ -46,9 +45,7 @@ return {
         notifier = { enabled = true },
         quickfile = { enabled = true },
         scope = { enabled = true },
-        scratch = { enabled = true },
         statuscolumn = { enabled = true },
-        terminal = { enabled = true },
     },
     keys = {
         -- Finders
@@ -84,12 +81,5 @@ return {
         { "gy",              function() Snacks.picker.lsp_type_definitions({ layout = "select" }) end,  desc = "[G]oto T[y]pe Definitions" },
         { "<leader>ls",      function() Snacks.picker.lsp_symbols({ layout = "select" }) end,           desc = "[L]SP [S]ymbold" },
         { "<leader>lS",      function() Snacks.picker.lsp_workspace_symbols({ layout = "select" }) end, desc = "[L]SP Workspace [S]ymbols" },
-
-        { "<leader>S",       function() Snacks.scratch.select() end,                                    desc = "[S]cratches" },
-        { "<leader>.",       function() Snacks.scratch() end,                                           desc = "Open Scratch" },
-
-        -- Terminal
-        { "<leader>to",      function() Snacks.terminal.open() end,                                     desc = "[T]erminal [O]pen" },
-        { "<leader>tt",      function() Snacks.terminal.toggle() end,                                   desc = "[T]erminal [T]oggle" },
     },
 }
